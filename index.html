@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Réalisme – Cours de français, niveau quatrième</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1f3a68;--teal:#2a8aa6;--red:#c0392b;--hl:#ffe66d;--paper:#fffdf8;--grid:#d3e3f2;--ink:#232a35;--ok:#2e7d4f;--okbg:#dff3e5;--kobg:#fbdcd8;--bg:#e9eef5;
+--serif:"Merriweather",Georgia,"Times New Roman",serif;--sans:"Atkinson Hyperlegible",Verdana,Tahoma,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#161c27;--paper:#1f2735;--grid:#2b3a50;--ink:#e8ecf3;--navy:#9cc0f5;--teal:#6cc3dd;--red:#ff8a7a;--okbg:#1f4430;--kobg:#58282a;--ok:#7fdca1}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 var(--sans)}
+header{background:var(--paper);border-bottom:6px solid var(--navy);padding:20px 16px 14px;text-align:center}
+.logo{display:block;margin:0 auto 10px;width:190px;max-width:60%;height:auto;border-radius:6px;border:1px solid var(--grid)}
+header h1{font:900 clamp(1.7rem,5vw,2.6rem)/1.2 var(--serif);color:var(--navy);margin:.2em 0}
+header p{margin:0;font-size:1rem}
+header .by{margin-top:6px;font-weight:700;color:var(--red)}
+nav.tabs{position:sticky;top:0;z-index:5;display:flex;gap:10px;justify-content:center;padding:10px;background:var(--navy)}
+nav.tabs button{font:700 1.05rem var(--sans);padding:10px 22px;border:2px solid var(--paper);background:transparent;color:#fff;border-radius:8px;cursor:pointer}
+nav.tabs button[aria-selected=true]{background:var(--hl);color:#1f2735;border-color:var(--hl)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+main{max-width:860px;margin:22px auto;padding:0 12px}
+.page{background:var(--paper);background-image:repeating-linear-gradient(transparent 0 31px,var(--grid) 31px 32px);border:1px solid var(--grid);border-left:4px double var(--red);border-radius:4px;padding:12px 22px 28px 44px;box-shadow:0 3px 10px #0002}
+.page[hidden]{display:none}
+h2{font:900 1.55rem/1.3 var(--serif);color:var(--navy);margin:1.6em 0 .5em;padding-bottom:4px;border-bottom:3px solid var(--navy)}
+h3{font:700 1.15rem var(--serif);color:var(--teal);margin:1.3em 0 .3em}
+p,li{margin:.4em 0}
+.keep{background:var(--okbg);border-left:6px solid var(--ok);padding:8px 14px;border-radius:0 8px 8px 0;margin:1em 0}
+mark{background:var(--hl);color:#1f2735;padding:0 3px}
+.note{background:#fff7c2;color:#3a3320;border:1px solid #e6d36a;padding:8px 14px;border-radius:4px;transform:rotate(-.4deg);margin:1em 0}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95rem;background:var(--paper)}
+th,td{border:1px solid var(--navy);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--navy);color:var(--paper)}
+@media (prefers-color-scheme:dark){th{color:#10151e}}
+.auth{background:var(--paper);border:2px solid var(--navy);border-radius:10px;padding:2px 16px 10px;margin:1em 0}
+.quote{font-family:var(--serif);font-style:italic;border-left:4px solid var(--teal);padding-left:14px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.pills a{background:var(--navy);color:var(--paper);text-decoration:none;padding:5px 14px;border-radius:20px;font-size:.95rem}
+@media (prefers-color-scheme:dark){.pills a{color:#10151e}}
+.q{background:var(--paper);border:1px solid var(--navy);border-radius:8px;padding:10px 16px;margin:12px 0}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt,.btn,.rev{font:inherit;font-size:.95rem;border:2px solid var(--navy);background:var(--paper);color:var(--ink);border-radius:8px;padding:6px 14px;cursor:pointer}
+.opt:hover,.btn:hover{background:var(--hl);color:#1f2735}
+.rev{border-style:dashed;border-color:var(--teal);margin-top:6px}
+.btn{background:var(--navy);color:var(--paper);margin-right:6px}
+@media (prefers-color-scheme:dark){.btn{color:#10151e}}
+.ok{background:var(--okbg)!important;border-color:var(--ok)!important;color:var(--ink)!important}
+.ko{background:var(--kobg)!important;border-color:var(--red)!important;color:var(--ink)!important}
+.fb{min-height:1.2em;font-weight:700;margin:6px 0 0}
+.ans{background:var(--hl);color:#1f2735;border-radius:6px;padding:6px 12px;margin:8px 0 0}
+input[type=text],textarea{font:inherit;border:2px solid var(--navy);border-radius:6px;padding:3px 8px;background:var(--paper);color:var(--ink)}
+textarea{width:100%}
+.seg{cursor:pointer;border-radius:4px;padding:1px 0}
+.seg:hover{background:#ffe66d88}
+.seg.sel{background:#bfe0f5;color:#10151e;box-shadow:0 0 0 2px var(--teal)}
+.seg.good{background:var(--okbg);box-shadow:0 0 0 2px var(--ok)}
+.seg.bad{background:var(--kobg);box-shadow:0 0 0 2px var(--red)}
+.seg.miss{box-shadow:0 0 0 2px var(--red);outline:2px dashed var(--red)}
+footer{text-align:center;padding:20px 12px 34px;font-size:.95rem}
+@media (max-width:560px){body{font-size:17px}.page{padding:8px 12px 20px 26px}}
+@media print{nav.tabs,.rev,.btn{display:none}}
+</style>
+</head>
+<body>
+<header>
+<img class="logo" src="data:image/jpeg;base64,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" alt="Logo FranSid – professeur de français">
+<h1>Le Réalisme</h1>
+<p>Cours de français – niveau quatrième</p>
+<p class="by">Cours préparé par Sid KHALIFA, professeur de français</p>
+</header>
+<nav class="tabs" role="tablist">
+<button role="tab" aria-selected="true" data-t="cours">Explication du cours</button>
+<button role="tab" aria-selected="false" data-t="rev">Révision</button>
+</nav>
+<main>
+<section id="cours" class="page">
+<h2>1. Qu’est-ce que le réalisme ?</h2>
+<p>Le réalisme est un mouvement littéraire et artistique qui naît en France vers <mark>1830</mark> et qui domine la littérature jusqu’en <mark>1880</mark> environ.</p>
+<p>L’idée centrale est simple : les écrivains réalistes veulent montrer le monde tel qu’il est vraiment, sans l’idéaliser ni l’embellir. Ils veulent peindre la vérité.</p>
+<p>Avant eux, le <strong>romantisme</strong> (Hugo, Lamartine…) mettait en avant les sentiments et l’imagination. Les réalistes font le choix inverse : ils observent la réalité concrète de la société, même quand elle est triste, laide ou injuste.</p>
+<div class="keep"><strong>À retenir :</strong> le réalisme = peindre le réel tel qu’il est, avec précision et objectivité.</div>
+
+<h2>2. Le contexte historique : pourquoi le réalisme apparaît-il ?</h2>
+<p>Un mouvement littéraire ne sort pas de nulle part. Le réalisme s’explique par les grands changements du XIX<sup>e</sup> siècle :</p>
+<ul>
+<li><strong>La révolution industrielle :</strong> les villes grandissent très vite, des usines s’installent, une nouvelle classe sociale apparaît : la <em>bourgeoisie</em> (les gens aisés : commerçants, industriels, notaires…). Mais la misère des ouvriers et des paysans est aussi très visible.</li>
+<li><strong>Le progrès des sciences :</strong> la médecine, la biologie et les sciences humaines progressent. On veut observer et comprendre le monde avec méthode, comme un scientifique.</li>
+<li><strong>La photographie</strong> (inventée vers 1839) : elle montre la réalité brute, sans interprétation. Les écrivains veulent faire pareil avec les mots : leur plume devient comme un objectif photographique.</li>
+</ul>
+
+<h2>3. Les caractéristiques du réalisme</h2>
+<h3>A. Le choix des sujets</h3>
+<ul>
+<li>Les écrivains réalistes parlent du monde <strong>contemporain</strong> (le XIX<sup>e</sup> siècle), pas du Moyen Âge ou de l’Antiquité.</li>
+<li>Ils s’intéressent à <strong>toutes les classes sociales</strong> : bourgeois, paysans, ouvriers, petits employés… Fini les rois et les héros extraordinaires : le personnage principal peut être un modeste employé de bureau.</li>
+<li>Ils montrent aussi les côtés sombres de la société : la misère, l’argent qui corrompt, l’ambition, l’hypocrisie.</li>
+</ul>
+<h3>B. La manière d’écrire</h3>
+<ul>
+<li><strong>Des descriptions très précises :</strong> lieux, objets, vêtements, visages… tout est décrit avec minutie, comme une photo.</li>
+<li><strong>Un narrateur omniscient :</strong> il sait tout sur ses personnages (leurs pensées, leur passé), comme un observateur invisible.</li>
+<li><strong>Un style sobre et neutre :</strong> l’auteur semble disparaître derrière ce qu’il raconte ; il semble seulement « constater » les faits.</li>
+<li><strong>Le point de vue :</strong> le regard du personnage sur le monde (par exemple à travers ses yeux dans les descriptions) permet au lecteur de découvrir le réel.</li>
+</ul>
+<h3>C. Les thèmes favoris</h3>
+<table>
+<tr><th>Thème</th><th>Exemple</th></tr>
+<tr><td>L’argent et l’ambition sociale</td><td>Un jeune homme prêt à tout pour devenir riche</td></tr>
+<tr><td>La montée de la bourgeoisie</td><td>Des familles qui cherchent un bon mariage</td></tr>
+<tr><td>La vie des gens ordinaires</td><td>Une paysanne qui s’adapte à la ville</td></tr>
+<tr><td>L’échec et la médiocrité</td><td>Le rêve d’une vie meilleure qui tourne mal</td></tr>
+<tr><td>L’hypocrisie sociale</td><td>Les apparences contre le vrai visage des gens</td></tr>
+</table>
+
+<h2>4. Les auteurs célèbres du réalisme</h2>
+<div class="auth"><h3>Honoré de Balzac (1799-1850)</h3>
+<p>C’est le précurseur du réalisme. Son grand projet : <em>La Comédie humaine</em>, un ensemble de plus de 90 romans qui décrivent toute la société française de son époque, comme une immense fresque.</p>
+<p><strong>Œuvre à connaître :</strong> <em>Le Père Goriot</em> (1835) : un père qui se sacrifie tout pour ses filles ingrates, dans un Paris gouverné par l’argent.</p></div>
+<div class="auth"><h3>Gustave Flaubert (1821-1880)</h3>
+<p>Il est devenu le maître du réalisme grâce à son roman <em>Madame Bovary</em> (1857). Emma Bovary, une femme de province, s’ennuie et rêve d’une vie passionnée comme dans les romans ; la réalité la déçoit, et elle s’endette et se détruit.</p>
+<p><strong>Procès célèbre :</strong> le roman a été jugé « obscène » et Flaubert a été poursuivi en justice… puis relaxé. Le procès a rendu le livre encore plus célèbre.</p>
+<p>Flaubert cherchait « le mot juste » : il retravaillait ses phrases des heures entières.</p></div>
+<div class="auth"><h3>Guy de Maupassant (1850-1893)</h3>
+<p>Le maître de la nouvelle réaliste. Œuvre la plus connue : <em>Une vie</em> (1883), roman sobre et touchant. Ses nouvelles, comme <em>Boule de suif</em> (1880) et <em>La Parure</em> (1884), dénoncent l’hypocrisie des gens « comme il faut » et le rôle de l’argent dans les relations humaines.</p></div>
+<div class="auth"><h3>Émile Zola (1840-1902)</h3>
+<p>Il pousse le réalisme encore plus loin : c’est le <strong>naturalisme</strong> (le réalisme « scientifique »). Son grand projet : <em>Les Rougon-Macquart</em>, une série de 20 romans qui suit une famille sur plusieurs générations pour montrer comment l’hérédité et le milieu social déterminent les destinées.</p>
+<p><strong>Œuvre à connaître :</strong> <em>Germinal</em> (1885) : la grève des mineurs de charbon, leur misère et leur combat. C’est le premier grand roman sur le monde ouvrier.</p></div>
+
+<h2>5. Un extrait pour comprendre : la description réaliste</h2>
+<p>Voici le début du <em>Père Goriot</em>, où Balzac décrit une pension (une maison où l’on loue des chambres) :</p>
+<p class="quote">« Cette maison porte le numéro 9, rue Neuve-Sainte-Geneviève […]. La façade donne sur un jardin […] ; les murs sont épais, et la maison n’a que trois étages. »</p>
+<p><strong>Que remarque-t-on ?</strong></p>
+<ul>
+<li>Le lieu est décrit avec <mark>précision</mark> (adresse, nombre d’étages, épaisseur des murs).</li>
+<li>Le narrateur, comme un guide ou une caméra, nous fait visiter le lieu avant de présenter les personnages.</li>
+<li>L’accumulation de détails crée un <mark>effet de réel</mark> : on croit vraiment voir la maison.</li>
+</ul>
+<div class="note">C’est exactement la « méthode » réaliste : partir du concret, du détail vrai, pour décrire le monde.</div>
+
+<h2>6. Les repères à retenir</h2>
+<table>
+<tr><th>Élément</th><th>Réponse</th></tr>
+<tr><td>Dates</td><td>Environ 1830-1880</td></tr>
+<tr><td>Mouvement précédent</td><td>Le romantisme (sentiments, imagination)</td></tr>
+<tr><td>Réaction contre</td><td>L’idéalisation du monde</td></tr>
+<tr><td>Mot d’ordre</td><td>« Peindre le réel tel qu’il est »</td></tr>
+<tr><td>Auteurs à retenir</td><td>Balzac, Flaubert, Maupassant, Zola</td></tr>
+<tr><td>Œuvres à retenir</td><td><em>Le Père Goriot</em>, <em>Madame Bovary</em>, <em>Une vie</em>, <em>Germinal</em></td></tr>
+<tr><td>Genre dominant</td><td>Le roman (et la nouvelle)</td></tr>
+<tr><td>Héritage</td><td>Le naturalisme (Zola), qui prolonge le réalisme</td></tr>
+</table>
+
+<h2>7. Conclusion</h2>
+<p>Le réalisme est un moment clé de l’histoire littéraire : en choisissant de montrer la société telle qu’elle est, Balzac, Flaubert, Maupassant et Zola ont fait du roman un véritable tableau de leur époque et une critique sociale. Le roman n’est plus seulement une histoire : il devient un instrument pour comprendre le monde. Le réalisme prépare aussi le naturalisme de Zola, puis influencera tout le roman moderne.</p>
+<p><button class="btn" data-go="rev">Passer à la révision</button></p>
+</section>
+
+<section id="rev" class="page" hidden>
+<h2 style="margin-top:.8em">Révision : teste tes connaissances</h2>
+<p>Réponds, puis clique sur « Voir la réponse » si tu veux la correction.</p>
+<div class="pills"><a href="#e1">Vrai / Faux</a><a href="#e2">QCM</a><a href="#e3">Compléter</a><a href="#e4">Réponses courtes</a><a href="#e5">Repérage</a></div>
+<h3 id="e1">Exercice 1 – Vrai ou faux ?</h3><div id="vf"></div>
+<h3 id="e2">Exercice 2 – QCM</h3><div id="qcm"></div>
+<h3 id="e3">Exercice 3 – Complète les phrases</h3><div id="fill"></div>
+<h3 id="e4">Exercice 4 – Réponds en une ou deux phrases</h3><div id="short"></div>
+<h3 id="e5">Exercice 5 – Repère les éléments dans le texte</h3>
+<p>Dans cet extrait du <em>Père Goriot</em>, clique sur les passages qui créent un <strong>effet de réel</strong> (les détails précis). Reclique pour désélectionner.</p>
+<div class="q" id="spot"><p class="quote" id="seg"></p>
+<button class="btn" id="chk5">Vérifier</button><button class="btn" id="rst5">Recommencer</button><button class="rev" id="rev5">Voir la réponse</button>
+<p class="fb" id="fb5" aria-live="polite"></p></div>
+</section>
+</main>
+<footer>Cours préparé par <strong>Sid KHALIFA</strong>, professeur de français</footer>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const nrm=s=>s.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+function show(t){$$(".page").forEach(p=>p.hidden=p.id!==t);$$("nav.tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.t===t));scrollTo(0,0)}
+$$("nav.tabs button").forEach(b=>b.onclick=()=>show(b.dataset.t));
+$$("[data-go]").forEach(b=>b.onclick=()=>show(b.dataset.go));
+const VF=(q,v,e)=>({q,o:["Vrai","Faux"],a:v?0:1,e}),
+vf=[VF("Les réalistes parlent surtout du Moyen Âge et de l’Antiquité.",0,"Faux : ils parlent du monde contemporain, le XIXe siècle."),
+VF("Les réalistes s’intéressent à toutes les classes sociales.",1,"Vrai : bourgeois, paysans, ouvriers, petits employés…"),
+VF("Le style réaliste est sobre et neutre.",1,"Vrai : l’auteur semble seulement « constater » les faits."),
+VF("Flaubert a été condamné à la suite du procès de Madame Bovary.",0,"Faux : il a été poursuivi en justice, puis relaxé."),
+VF("Les réalistes choisissent uniquement des personnages royaux et héroïques.",0,"Faux : c’est tout le contraire, ils s’intéressent aux gens ordinaires."),
+VF("Balzac est considéré comme le précurseur du réalisme.",1,"Vrai : avec La Comédie humaine, il décrit toute la société de son époque.")],
+qcm=[{q:"Quel mouvement littéraire précède le réalisme ?",o:["Le classicisme","Le romantisme","Le surréalisme","L’humanisme"],a:1,e:"Le romantisme (Hugo, Lamartine) mettait en avant les sentiments et l’imagination."},
+{q:"Quel est le grand projet de Balzac ?",o:["Les Rougon-Macquart","Les Misérables","La Comédie humaine","Une vie"],a:2,e:"La Comédie humaine : plus de 90 romans qui forment une fresque de la société française."},
+{q:"Quelle invention de 1839 inspire les écrivains réalistes ?",o:["Le télégraphe","L’imprimerie","Le cinéma","La photographie"],a:3,e:"La photographie montre la réalité brute : les écrivains veulent faire pareil avec les mots."},
+{q:"Qui est l’auteur de La Parure ?",o:["Maupassant","Zola","Flaubert","Balzac"],a:0,e:"Guy de Maupassant, maître de la nouvelle réaliste (La Parure, 1884)."},
+{q:"Quel roman raconte la grève des mineurs de charbon ?",o:["Madame Bovary","Germinal","Le Père Goriot","Boule de suif"],a:1,e:"Germinal (1885), d’Émile Zola, premier grand roman sur le monde ouvrier."}],
+fill=[["Le réalisme naît en France vers "," .","1830","Il domine la littérature jusqu’en 1880 environ."],
+["Le réalisme s’oppose au "," , qui mettait en avant les sentiments.","romantisme","Les réalistes font le choix inverse."],
+["Le narrateur "," sait tout sur ses personnages.","omniscient","Il connaît leurs pensées et leur passé."],
+["Flaubert est l’auteur du roman "," Bovary.","Madame","Madame Bovary (1857)."],
+["Zola prolonge le réalisme avec le "," .","naturalisme","Le naturalisme est le réalisme « scientifique »."]],
+sh=[["Cite trois caractéristiques de l’écriture réaliste.","Des descriptions précises et détaillées ; un narrateur omniscient ; un style sobre et neutre ; des sujets contemporains et sociaux."],
+["Pourquoi dit-on que les écrivains réalistes veulent être « comme des photographes » ?","Parce qu’ils veulent montrer la réalité telle qu’elle est, avec précision et sans embellir, comme le fait un appareil photo."],
+["Qui a écrit Germinal, et quel monde ce roman raconte-t-il ?","Émile Zola ; il raconte la vie et la grève des mineurs de charbon."],
+["Quel roman de Flaubert lui a valu un procès en 1857 ?","Madame Bovary, jugé « obscène » ; Flaubert a finalement été relaxé."]];
+const tail=e=>`<p class="fb"></p><button class="rev">Voir la réponse</button><p class="ans" hidden>${e}</p>`;
+const ch=(id,L)=>$(id).innerHTML=L.map((x,i)=>`<div class="q"><p><strong>${i+1}.</strong> ${x.q}</p><div class="opts">${x.o.map((t,j)=>`<button class="opt" data-j="${j}" data-a="${x.a}">${t}</button>`).join("")}</div>${tail(x.e)}</div>`).join("");
+ch("#vf",vf);ch("#qcm",qcm);
+$("#fill").innerHTML=fill.map((f,i)=>`<div class="q"><p><strong>${i+1}.</strong> ${f[0]}<input type="text" size="13" data-a="${f[2]}" aria-label="Réponse ${i+1}">${f[1]}</p><button class="btn chk">Vérifier</button>${tail("Réponse : <strong>"+f[2]+"</strong>. "+f[3])}</div>`).join("");
+$("#short").innerHTML=sh.map((s,i)=>`<div class="q"><p><strong>${i+1}.</strong> ${s[0]}</p><textarea rows="3" aria-label="Ta réponse ${i+1}"></textarea>${tail(s[1])}</div>`).join("");
+const S=[["Cette maison porte le ",0],["numéro 9, rue Neuve-Sainte-Geneviève",1],[" […]. La ",0],["façade donne sur un jardin",1],[" […] ; les ",0],["murs sont épais",1],[", et la maison n’a que ",0],["trois étages",1],[".",0]];
+$("#seg").innerHTML="« "+S.map(s=>`<span class="seg" tabindex="0" role="button" data-ok="${s[1]}">${s[0]}</span>`).join("")+" »";
+document.addEventListener("click",e=>{
+const o=e.target.closest(".opt"),r=e.target.closest(".rev"),c=e.target.closest(".chk"),g=e.target.closest(".seg");
+if(o){const q=o.closest(".q");$$("#"+q.parentNode.id+" .opt").length;q.querySelectorAll(".opt").forEach(x=>x.classList.remove("ok","ko"));const good=o.dataset.j===o.dataset.a;o.classList.add(good?"ok":"ko");q.querySelector(".fb").textContent=good?"Bonne réponse !":"Ce n’est pas ça. Réessaie ou clique sur « Voir la réponse ».";}
+if(c){const q=c.closest(".q"),i=q.querySelector("input");const good=nrm(i.value)===nrm(i.dataset.a);i.classList.toggle("ok",good);i.classList.toggle("ko",!good);q.querySelector(".fb").textContent=good?"Bonne réponse !":"Pas tout à fait. Réessaie ou clique sur « Voir la réponse ».";}
+if(r&&r.id!=="rev5"){const q=r.closest(".q"),a=q.querySelector(".ans");a.hidden=!a.hidden;r.textContent=a.hidden?"Voir la réponse":"Masquer la réponse";const op=q.querySelectorAll(".opt");if(op.length&&!a.hidden)op[op[0].dataset.a].classList.add("ok");}
+if(g)g.classList.toggle("sel");
+});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("seg")){e.preventDefault();e.target.classList.toggle("sel")}});
+$("#chk5").onclick=()=>{let ok=0,bad=0,miss=0;$$(".seg").forEach(s=>{const sel=s.classList.contains("sel"),v=s.dataset.ok==="1";s.classList.remove("good","bad","miss");if(sel&&v){s.classList.add("good");ok++}else if(sel){s.classList.add("bad");bad++}else if(v){s.classList.add("miss");miss++}});$("#fb5").textContent=`${ok} bon(s) repérage(s), ${bad} erreur(s), ${miss} oublié(s).`+(bad+miss?" Corrige ou clique sur « Voir la réponse ».":" Bravo !")};
+$("#rst5").onclick=()=>{$$(".seg").forEach(s=>s.classList.remove("sel","good","bad","miss"));$("#fb5").textContent=""};
+$("#rev5").onclick=()=>{$$(".seg").forEach(s=>{s.classList.remove("sel","bad","miss","good");if(s.dataset.ok==="1")s.classList.add("good")});$("#fb5").textContent="Les passages en vert sont les détails précis : adresse, jardin, épaisseur des murs et nombre d’étages. Les autres passages ne sont que des mots de liaison."};
+</script>
+</body>
+</html>
